@@ -7,10 +7,10 @@ on:
         default: "desenvolvimento"
         required: true
         description: "Ambiente onde será feito o deploy"
-    secrets:
-      segredo:
-        required: true
-        description: "Kubeconfig para acesso ao cluster Kubernetes"
+    # secrets:
+    #   segredo:
+    #     required: true
+    #     description: "Kubeconfig para acesso ao cluster Kubernetes"
 jobs:
   deploy-kubernetes:
     runs-on: ubuntu-latest
