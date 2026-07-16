@@ -21,11 +21,16 @@ jobs:
         run: echo "Aqui eu executo o teste de software"
       - name: Publicando a Release
         run: echo "Publicação da Relase final"
+  #CD:
+  # needs: [CI]
+  # uses: andresramilo/repo-reaproveitavel/.github/workflows/cd.yml@main
+  # with:
+  #  ambiente: ${{ inputs.ambiente }}
+  # secrets:
+  #   segredo: ${{ secrets.SEGREDO }}
+  # secrets: inherit
+
   CD:
     needs: [CI]
-    uses: andresramilo/repo-reaproveitavel/.github/workflows/cd.yml@main
-    with:
-      ambiente: ${{ inputs.ambiente }}
-    # secrets:
-    #   segredo: ${{ secrets.SEGREDO }}
+    uses: andresramilo/repo-deploy/.github/workflows/deploy.yml@main
     secrets: inherit
