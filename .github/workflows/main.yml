@@ -30,9 +30,16 @@ jobs:
   #   segredo: ${{ secrets.SEGREDO }}
   # secrets: inherit
 
+  #CD:
+  # needs: [CI]
+  # uses: andresramilo/repo-deploy/.github/workflows/deploy.yml@main
+  # with:
+  #   ambiente: ${{ inputs.ambiente }}
+  # secrets: inherit
+
   CD:
     needs: [CI]
-    uses: andresramilo/repo-deploy/.github/workflows/deploy.yml@main
+    uses: andresramilo/repo-deploy/.github/workflows/deploy-remoto.yml@main
     with:
       ambiente: ${{ inputs.ambiente }}
     secrets: inherit
